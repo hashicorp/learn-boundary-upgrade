@@ -16,7 +16,7 @@ controller {
   }
 }
 
-# Worker Configuration
+// # Worker Configuration
 // worker {
 //   name = "docker-worker"
 //   description = "A worker for a docker demo"

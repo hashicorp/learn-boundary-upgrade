@@ -2,7 +2,7 @@ terraform {
   required_providers {
     boundary = {
       source  = "hashicorp/boundary"
-      version = "0.1.0"
+      version = "1.0.1"
     }
   }
 }
@@ -69,7 +69,7 @@ resource "boundary_account" "user" {
   description    = "User account for ${each.key}"
   type           = "password"
   login_name     = lower(each.key)
-  password       = "foofoofoo"
+  password       = "password"
   auth_method_id = boundary_auth_method.password.id
 }
 
@@ -92,6 +92,7 @@ resource "boundary_role" "org_anon_listing" {
   ]
   principal_ids = ["u_anon"]
 }
+
 resource "boundary_role" "org_admin" {
   scope_id       = "global"
   grant_scope_id = boundary_scope.org.id

@@ -26,7 +26,7 @@ function init_terraform() {
 
 # Test with login to Boundary after provisioning
 function login() {
-  boundary authenticate password -login-name jeff -password foofoofoo -auth-method-id $(primary_org_ampw)
+  boundary authenticate password -login-name user1 -password password -auth-method-id $(primary_org_ampw)
 }
 
 function primary_org_id() {

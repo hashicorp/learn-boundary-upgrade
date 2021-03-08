@@ -18,7 +18,7 @@ Start the docker-compose deployment:
 ./run all
 ```
 
-To login your Boundary CLI:
+To login via Boundary CLI as user1:
 
 ```bash
 ./run login
@@ -33,11 +33,11 @@ To stop all containers and start from scratch:
 Login to the UI:
   - Open browser to localhost:9200
   - Login Name: <any user from var.users>
-  - Password: foofoofoo
+  - Password: password
   - Auth method ID: find this in the UI when selecting the auth method or from TF output
 
 ```bash
-$ boundary authenticate password -login-name jeff -password foofoofoo -auth-method-id <get_from_console_or_tf>
+$ boundary authenticate password -login-name user1 -password password -auth-method-id <get_from_tf.state>
 
 Authentication information:
   Account ID:      apw_gAE1rrpnG2

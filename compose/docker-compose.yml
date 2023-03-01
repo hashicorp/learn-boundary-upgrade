@@ -17,7 +17,7 @@ services:
       retries: 5
   
   db-init:
-    image: hashicorp/boundary:0.1.1
+    image: hashicorp/boundary:0.12.0
     command: ["database", "init", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary/"
@@ -28,7 +28,7 @@ services:
         condition: service_healthy
 
   controller:
-    image: hashicorp/boundary:0.1.1
+    image: hashicorp/boundary:0.12.0
     command: ["server", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary/"
@@ -39,7 +39,8 @@ services:
     environment:
       - BOUNDARY_PG_URL=postgresql://postgres:postgres@db/boundary?sslmode=disable
     depends_on:
-      - db-init
+      db-init:
+        condition: service_completed_successfully
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9200"]
       interval: 3s

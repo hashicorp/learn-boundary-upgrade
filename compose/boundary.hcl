@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 # Disable memory lock: https://www.man7.org/linux/man-pages/man2/mlock.2.html
 disable_mlock = true
 

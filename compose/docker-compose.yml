@@ -28,7 +28,7 @@ services:
         condition: service_healthy
 
   controller:
-    image: hashicorp/boundary:0.12.0
+    image: hashicorp/boundary:0.11.2
     command: ["server", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary/"

@@ -6,6 +6,8 @@ function cleanup() {
   popd
   pushd terraform/
   rm terraform.tfstate*
+  rm -rf .terraform
+  rm .terraform.lock.hcl
   popd
   exit 0
 }

@@ -1,5 +1,7 @@
 # learn-boundary-upgrade
 
+New repo here: https://github.com/hashicorp-education/learn-boundary-upgrade
+
 This directory contains an example deployment of Boundary using docker-compose and Terraform.
 
 In this example, Boundary is deployed using the [hashicorp/boundary](https://hub.docker.com/r/hashicorp/boundary) Dockerhub image. The Boundary service ports are forwarded to the host machine to mimic being in a "public" network. Docker-Compose creates and initializes a Postgres database and a Boundary Controller. Boundary is then provisioned via Terraform to include several test users and some sample targets.
